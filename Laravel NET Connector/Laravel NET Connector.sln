@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connector", "Laravel NET Connector\Connector.csproj", "{CA83D876-0650-4F61-825F-67407CD6F88E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example Project", "Console Tests\Example Project.csproj", "{1D928A67-96A3-49FB-B7B9-251E7DB34761}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA83D876-0650-4F61-825F-67407CD6F88E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA83D876-0650-4F61-825F-67407CD6F88E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA83D876-0650-4F61-825F-67407CD6F88E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA83D876-0650-4F61-825F-67407CD6F88E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D928A67-96A3-49FB-B7B9-251E7DB34761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D928A67-96A3-49FB-B7B9-251E7DB34761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D928A67-96A3-49FB-B7B9-251E7DB34761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D928A67-96A3-49FB-B7B9-251E7DB34761}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F62929AA-E94B-4273-BB3E-713A55D008AA}
+	EndGlobalSection
+EndGlobal
