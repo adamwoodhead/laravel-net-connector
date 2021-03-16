@@ -266,6 +266,17 @@ Using the above implementation, you can expect the following usage results:
 
 ##### Static Calls
 ```csharp
+Config config = new Config()
+{
+    BaseURL = "https://127.0.0.1:8000/api",
+    AuthenticationMode = Enums.AuthenticationType.JWT,
+    AutoRefresh = true,
+    Out = Console.Out,
+    ThrowAuthenticationExceptions = true
+};
+
+Host.Initialize(config);
+
 await Customer.GetAsync(); // returns List<Customer>
 await Customer.GetAsync(1); // returns Customer
 
