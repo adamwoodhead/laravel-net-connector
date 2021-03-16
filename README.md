@@ -222,32 +222,32 @@ The following example is designed to match the above CustomerController.
 
 ```csharp
 public interface ICustomer
+{
+    string Name { get; set; }
+}
+
+[JsonObject]
+[Route("/customers")]
+public class Customer : LaravelModel<Customer>, ICustomer
+{
+    [JsonProperty("name")]
+    public string Name { get; set; }
+
+    // Relationships
+
+    public async Task<List<CustomerDepot>> GetDepotsAsync(CancellationToken cancellationToken = default)
     {
-        string Name { get; set; }
+        return await GetDepotsAsync(this.ID, cancellationToken);
     }
 
-    [JsonObject]
-    [Route("/customers")]
-    public class Customer : SoftDeleteDataPacket<Customer>, ICustomer
+    public static async Task<List<CustomerDepot>> GetDepotsAsync(int? id, CancellationToken cancellationToken = default)
     {
-        [JsonProperty("name")]
-        public string Name { get; set; }
-
-        // Relationships
-
-        public async Task<List<CustomerDepot>> GetDepotsAsync(CancellationToken cancellationToken = default)
-        {
-            return await GetDepotsAsync(this.ID, cancellationToken);
-        }
-
-        public static async Task<List<CustomerDepot>> GetDepotsAsync(int? id, CancellationToken cancellationToken = default)
-        {
-            return await GetRelatedModelListAsync<CustomerDepot>("depots", id, cancellationToken);
-        }
-
-        [JsonConstructor]
-        public Customer() { }
+        return await GetRelatedModelListAsync<CustomerDepot>("depots", id, cancellationToken);
     }
+
+    [JsonConstructor]
+    public Customer() { }
+}
 ```
 
 The main things to note from this example are `[Route("/customers")]` & `[JsonProperty("name")]`, these must be correct for Laravel NET Connector to work.
