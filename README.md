@@ -250,10 +250,15 @@ public class Customer : LaravelModel<Customer>, ICustomer
 }
 ```
 
-The main things to note from this example are `[Route("/customers")]` & `[JsonProperty("name")]`, these must be correct for Laravel NET Connector to work.
-Every class you intend to use with this package should include the Route Attribute, with the route address of its index. Each field in the class must also be marked with `[JsonProperty("name")]` and its corresponding Laravel `$fillable` name.
+The main things to note from this example are ` : LaravelModel<Customer>`, `[Route("/customers")]` & `[JsonProperty("name")]`, these must be correct for Laravel NET Connector to work.
 
-As you can see, relationships must also be distinctly added to the class in .NET.
+1. Each class must inherit the LaravelModel class, which takes the class type as a parameter.
+` : LaravelModel<Customer>`
+
+2. Each class must include the Route Attribute, with the route address of its index.
+`[Route("/customers")]`
+
+3. Each field in the class must also be marked with `[JsonProperty("name")]` and its corresponding Laravel `$fillable` name.
 
 ### Usage
 
